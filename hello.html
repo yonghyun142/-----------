@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +31,53 @@
         
         var varArrTemp = new Array(100);
         console.log("varArrTemp.length :" + varArrTemp.length)
-     </script>
+
+        //indexOf()
+        var varArrIndex = new Array(123, "ABC", "가나다", 123, "ABC", "가나다")
+        
+        console.log("varArrIndex.indexOf(가나다) :" +varArrIndex.indexOf(123))
+        console.log("varArrIndex.indexOf(가나다) :" +varArrIndex.lastIndexOf(123))        
+    
+    //join()
+    var varArrJoin = new Array("AB","CD","EF","HI")
+    console.log("varArrJoin :" +varArrJoin.join())
+    console.log("varArrJoin :" +varArrJoin.join(" | "))  // AB | CD | EF | HI
+    console.log("varArrJoin :" +varArrJoin.join(":"))
+
+    //sort()
+    var varArrSort = new Array("B","D","F","I")
+    console.log("varArrSortBefore :" +varArrSort)
+    console.log("varArrSort :" +varArrSort.sort())
+    console.log("varArrSortAfter :" +varArrSort)
+
+      //push()
+      var varArrPush = new Array("B","D","F","I")
+    console.log("varArrPush :" +varArrPush.push("가나다","마바사"))
+    console.log("varArrPush :" +varArrPush)
+    
+
+      //shift(), pop()
+      var varArrShiftPop = new Array("B","D","F","I")
+    console.log("varArrShiftPop.shift() :" +varArrShiftPop.shift())
+    console.log("varArrShiftPop :" +varArrShiftPop)
+
+    console.log("varArrShiftPop.pop :" +varArrShiftPop.pop)
+    console.log("varArrShiftPop :" +varArrShiftPop)
+ 
+
+    
+    var lotto = []; //new Array(6);
+    
+    while(lotto.length < 6){
+        var num = parseInt(Math.random()* 45) + 1
+        if(lotto.indexOf(num) < 0){  //중복제거 -1;
+            lotto.push(num)
+        }
+    }
+
+    document.write("이번주 당첨 숫자는" +  lotto.sort())
+   
+    </script>
      
 </head>
 <body>
