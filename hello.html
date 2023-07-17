@@ -1,86 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
-   
+
+
     <script>
-        //배열 길이(크기)
-        var varArr = new Array(0,1,2,3,4,5);
-       document.write("varArr.length :" + varArr.length+"<br>")
 
-        varArr = ['사과','오렌지','포도']
+        function add(x, y) {
+            return x + y;
+        }
+        function sub(x, y) {
+            return x - y;
+        }
+        function mul(x, y) {
+            return x * y;
+        }
+        function printResult(x, y, callback) {
+            var result = callback(x, y)
+            document.write(result + "<br>")
+        }
+        printResult(2, 3, add)
+        printResult(2, 3, sub)
+        printResult(2, 3, mul)
+        document.write(add(10, 20))
 
-        for (let i = 0; i < varArr.length; i++) {
-            document.write( varArr [i]);
-            
+        //join()
+        var varArrJoin = new Array("AB", "CD", "EF", "HI")
+        console.log("varArrJoin :" + varArrJoin.join()) //AB:CD:EF:HI
+        console.log("varArrJoin :" + varArrJoin.join(" | "))  // AB | CD | EF | HI
+        console.log("varArrJoin :" + varArrJoin.join(":")) //AB:CD:EF:HI
+
+
+        //sort()
+        var varArrSort = new Array("B", "D", "F", "I")
+        console.log("varArrSortBefore :" + varArrSort)  //B,D,F,I
+        console.log("varArrSort :" + varArrSort.sort()) //B,D,F,I
+        console.log("varArrSortAfter :" + varArrSort) // B,D,F,I
+
+
+
+        //shift(), pop()
+        var varArrShiftPop = new Array("B", "D", "F", "I")
+        console.log("varArrShiftPop.shift() :" + varArrShiftPop.shift())  //B
+        console.log("varArrShiftPop :" + varArrShiftPop)  //D,F,I
+
+        console.log("varArrShiftPop.pop :" + varArrShiftPop.pop)
+        console.log("varArrShiftPop :" + varArrShiftPop) // D,F,I
+
+        var arrSub = ["국어", "영어", "수학"];
+
+        function getAvg(arrSubs) {
+            var sum = 0;
+
+            for (var i in arrSubs) {
+                sum = sum + Number(arrSubs[i]);
+            }
+            return sum / arrSubs.length;
         }
 
-        for (let num in varArr){
-            document.write(num);
+        function getGrade(avg) {
+            var grade = "가";
+
+            if (avg >= 90) {
+                grade = "수";
+            } else if (avg >= 80) {
+                grade = "우";
+            } else if (avg >= 70) {
+                grade = "미";
+            } else if (avg >= 60) {
+                grade = "양";
+            }
+            else {
+                grade = "가";
+
+                return grade;
+            }
+
+            for (var i in arrSub) {
+                arrSub[i] = prompt(arrSub[i])
+            }
         }
 
-        //array.forEach(element => {
+        document.write("평균" + getAvg(arrSub) + "<br>");
+        document.write("학점" + getGrade(getAvg(arrSub)) + "<br>");
 
-       // });
 
-        
-        var varArrTemp = new Array(100);
-        console.log("varArrTemp.length :" + varArrTemp.length)
+        function funName(funCBF, funCBP, num) {
 
-        //indexOf()
-        var varArrIndex = new Array(123, "ABC", "가나다", 123, "ABC", "가나다")
-        
-        console.log("varArrIndex.indexOf(가나다) :" +varArrIndex.indexOf(123))
-        console.log("varArrIndex.indexOf(가나다) :" +varArrIndex.lastIndexOf(123))        
-    
-    //join()
-    var varArrJoin = new Array("AB","CD","EF","HI")
-    console.log("varArrJoin :" +varArrJoin.join())
-    console.log("varArrJoin :" +varArrJoin.join(" | "))  // AB | CD | EF | HI
-    console.log("varArrJoin :" +varArrJoin.join(":"))
-
-    //sort()
-    var varArrSort = new Array("B","D","F","I")
-    console.log("varArrSortBefore :" +varArrSort)
-    console.log("varArrSort :" +varArrSort.sort())
-    console.log("varArrSortAfter :" +varArrSort)
-
-      //push()
-      var varArrPush = new Array("B","D","F","I")
-    console.log("varArrPush :" +varArrPush.push("가나다","마바사"))
-    console.log("varArrPush :" +varArrPush)
-    
-
-      //shift(), pop()
-      var varArrShiftPop = new Array("B","D","F","I")
-    console.log("varArrShiftPop.shift() :" +varArrShiftPop.shift())
-    console.log("varArrShiftPop :" +varArrShiftPop)
-
-    console.log("varArrShiftPop.pop :" +varArrShiftPop.pop)
-    console.log("varArrShiftPop :" +varArrShiftPop)
- 
-
-    
-    var lotto = []; //new Array(6);
-    
-    while(lotto.length < 6){
-        var num = parseInt(Math.random()* 45) + 1
-        if(lotto.indexOf(num) < 0){  //중복제거 -1;
-            lotto.push(num)
+            for (var i = 1; i <= 10; i++) {
+                console.log(num + "*" + i + "=" + (num * i))
+                if (i < 10) funCBP(i)
+            }
+            funCBF()
         }
-    }
-
-    document.write("이번주 당첨 숫자는" +  lotto.sort())
-   
+        function funCallBackProgress(n) {
+            console.log((n * 10) + "% 진행 완료!")
+        }
+        function funCallBackFinish() {
+            console.log("서버 작업 종료!")
+        }
+        funName(funCallBackFinish, funCallBackProgress, 7)
     </script>
-     
+
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
