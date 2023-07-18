@@ -11,100 +11,292 @@
 
     <script>
 
-        function add(x, y) {
-            return x + y;
-        }
-        function sub(x, y) {
-            return x - y;
-        }
-        function mul(x, y) {
-            return x * y;
-        }
-        function printResult(x, y, callback) {
-            var result = callback(x, y)
-            document.write(result + "<br>")
-        }
-        printResult(2, 3, add)
-        printResult(2, 3, sub)
-        printResult(2, 3, mul)
-        document.write(add(10, 20))
+//함수 생성 후 성적표 예문
 
-        //join()
-        var varArrJoin = new Array("AB", "CD", "EF", "HI")
-        console.log("varArrJoin :" + varArrJoin.join()) //AB:CD:EF:HI
-        console.log("varArrJoin :" + varArrJoin.join(" | "))  // AB | CD | EF | HI
-        console.log("varArrJoin :" + varArrJoin.join(":")) //AB:CD:EF:HI
+            //     var 홍길동 = new Grade("홍길동",100,70,80)
+            
+            //    function Grade(name,kor,eng,math){
+            //     this.name = name
+            //     this.kor = kor
+            //     this.eng = eng
+            //     this.math = math
+            //     this.getAvg = function(){
+            //         var avg = (kor + eng + math)/3
+            //         return name + "의 평균은" + avg + "입니다." +"<br>"
+            //     }
+            
+            //     this.getGrade = function(){
+            //         var avg = (kor + eng + math)/3
+            //         if(avg >= 90){
+            //             result = "수"
+            //         }else{
+            //             result = "가"
+            //         }
+            //         return name + "의 성적은" + result + "입니다."
+            //     }
+            //    }
+            
 
+        
 
-        //sort()
-        var varArrSort = new Array("B", "D", "F", "I")
-        console.log("varArrSortBefore :" + varArrSort)  //B,D,F,I
-        console.log("varArrSort :" + varArrSort.sort()) //B,D,F,I
-        console.log("varArrSortAfter :" + varArrSort) // B,D,F,I
-
-
-
-        //shift(), pop()
-        var varArrShiftPop = new Array("B", "D", "F", "I")
-        console.log("varArrShiftPop.shift() :" + varArrShiftPop.shift())  //B
-        console.log("varArrShiftPop :" + varArrShiftPop)  //D,F,I
-
-        console.log("varArrShiftPop.pop :" + varArrShiftPop.pop)
-        console.log("varArrShiftPop :" + varArrShiftPop) // D,F,I
-
-        var arrSub = ["국어", "영어", "수학"];
-
-        function getAvg(arrSubs) {
-            var sum = 0;
-
-            for (var i in arrSubs) {
-                sum = sum + Number(arrSubs[i]);
-            }
-            return sum / arrSubs.length;
-        }
-
-        function getGrade(avg) {
-            var grade = "가";
-
-            if (avg >= 90) {
-                grade = "수";
-            } else if (avg >= 80) {
-                grade = "우";
-            } else if (avg >= 70) {
-                grade = "미";
-            } else if (avg >= 60) {
-                grade = "양";
-            }
-            else {
-                grade = "가";
-
-                return grade;
-            }
-
-            for (var i in arrSub) {
-                arrSub[i] = prompt(arrSub[i])
-            }
-        }
-
-        document.write("평균" + getAvg(arrSub) + "<br>");
-        document.write("학점" + getGrade(getAvg(arrSub)) + "<br>");
+              //       document.write(홍길동.getAvg())
+              //     document.write(홍길동.getGrade())
 
 
-        function funName(funCBF, funCBP, num) {
 
-            for (var i = 1; i <= 10; i++) {
-                console.log(num + "*" + i + "=" + (num * i))
-                if (i < 10) funCBP(i)
-            }
-            funCBF()
-        }
-        function funCallBackProgress(n) {
-            console.log((n * 10) + "% 진행 완료!")
-        }
-        function funCallBackFinish() {
-            console.log("서버 작업 종료!")
-        }
-        funName(funCallBackFinish, funCallBackProgress, 7)
+
+//기본적인 객체 생성 방법 
+
+//1.Object()생성자 사용
+
+            //         var person = new Object()  //new 의 역할 = >    person = {}(빈껍데기 크기 지정)
+            //          person.name = "홍길동"  
+            //          person.age = "35" 
+            //          document.write(person +"<br>")    
+
+//2.객체 리터럴
+            //        var objPerson = {
+            //            name : "홍길동",  
+            //            age : 35,
+            //            getAge: function(){
+            //                return this.age
+            //            }
+            //        }
+
+//3.생성자 함수를 이용하는 방법(붕어빵 틀)  
+// 함수에서도 기본적으로 this를 쓸 수 있다. = 자바 스크립트에서는 함수가 객체이기 때문이다.
+// 함수가 만들어 질때 객체로 만들기 위해 2가지를 심어준다.(this,arguments)
+    
+            //      function Airplane(name, color, speed){
+            //           this.name = name
+            //           this.color = color
+            //           this.speed = speed
+            //           this.fly = function(){
+            //               return this.speed + "fly!!"
+            //              }
+            //          }
+//활용
+            //       var plane1 = new Airplane("보라매","레드",100)
+            //       document.write(plane1.fly())
+
+// in키워드 -> key존재 유무 확인
+// with키워드 -> 객체접근을 간소화
+
+
+        
+          // var objName = {            
+          //             name : "Lee sun sin",
+          //             nation : "Korea",
+          //             gender  : "men",
+          //             character : "good"            
+          //          };
+
+          //          //in키워드
+          //          console.log("nation" in objName) //objName에 nation이 있는지 확인 후 맞으면 true, 틀리면 false출력
+          //          console.log("age" in objName)
+
+          //          //with키워드
+          //          with(objName){
+          //             console.log("name : " + name)
+          //             console.log("nation : " + nation)
+          //             console.log("gender : " + gender)
+          //             console.log("character : " + character)
+          //          }
+      
+
+
+//객체에 속성 추가 및 삭제
+
+
+        //  var objName = {            
+        //     name : "Lee sun sin",
+        //     nation : "Korea",
+        //     gender  : "men",
+        //     character : "good"            
+        //  };
+         
+        //  var print = "";
+        //  for(var key in objName) {
+        //     print += key + " : " + objName[key] + "\n"
+        //  }
+        //  console.log(print);
+         
+        //  //속성 추가
+        //  objName.talent = "fencing";
+        //  print = "";
+        //  for(var key in objName) {
+        //     print += key + " : " + objName[key] + "\n"
+        //  }
+        //  console.log(print);
+         
+        //  //속성 삭제
+        //  delete(objName.talent);
+        //  //delete objName.talent;
+        //  print = "";
+        //  for(var key in objName) {
+        //     print += key + " : " + objName[key] + "\n"
+        //  }
+        //  console.log(print);
+
+
+//자기 자신의 멤버에 접근할 때 this 붙여야함.
+
+        // var objName = {}
+        // document.write(typeof objName)
+
+        // var objCar = {
+        //     width:"3m",
+        //     height:"2m",
+        //     cc:"2000cc",
+        //     speed: function(power){
+        //         return this.energy*power //자기 자신의 멤버에 접근할 때 this 붙여야함.
+        //     }
+        // }
+
+        // var print = ""
+        // for(var key in objCar){
+
+        //     //if(typeof objCar[key] == "function") continue
+        //     print += key + ":" + objCar[key] + "\n"
+
+        // }
+
+        // console.log(print)
+
+        
+        // document.write(objCar.width + "<br>")
+        // document.write(objCar.height + "<br>")
+        // document.write(objCar.cc + "<br>")
+
+        // document.write(objCar.energy + "<br>")
+        // document.write(objCar.speed(100) + "<br>")
+
+        // objCar.width = "8m"
+        // document.write(objCar.width)
+
+
+
+        // alert("내장함수")
+        // prompt("내장함수")
+
+//시간관련함수
+
+        // var timeOut = setTimeout(function () {
+        //     alert("3초후 실행 한번 실행")
+        // }, 3000)
+
+        // var timeOut = setTimeout(timeFun,3000)
+
+        // var intervalId = setInterval(function (){
+        //     document.write("2초 마다 실행"+"<br>")
+        // },2000)
+
+        // setTimeout(function(){
+        //     clearInterval(intervalId)
+        // },10000)
+
+//eval 함수
+//문자열에 있는 소스 코드 실행
+
+        // var varEval = "console.log('eval함수!')"
+        // eval(varEval)
+
+
+
+
+        // function add(x, y) {
+        //     return x + y;
+        // }
+        // function sub(x, y) {
+        //     return x - y;
+        // }
+        // function mul(x, y) {
+        //     return x * y;
+        // }
+        // function printResult(x, y, callback) {
+        //     var result = callback(x, y)
+        //     document.write(result + "<br>")
+        // }
+        // printResult(2, 3, add)
+        // printResult(2, 3, sub)
+        // printResult(2, 3, mul)
+        // document.write(add(10, 20))
+
+// //join()
+        // var varArrJoin = new Array("AB", "CD", "EF", "HI")
+        // console.log("varArrJoin :" + varArrJoin.join()) //AB:CD:EF:HI
+        // console.log("varArrJoin :" + varArrJoin.join(" | "))  // AB | CD | EF | HI
+        // console.log("varArrJoin :" + varArrJoin.join(":")) //AB:CD:EF:HI
+
+
+// //sort()
+        // var varArrSort = new Array("B", "D", "F", "I")
+        // console.log("varArrSortBefore :" + varArrSort)  //B,D,F,I
+        // console.log("varArrSort :" + varArrSort.sort()) //B,D,F,I
+        // console.log("varArrSortAfter :" + varArrSort) // B,D,F,I
+
+
+//shift(), pop()
+        // var varArrShiftPop = new Array("B", "D", "F", "I")
+        // console.log("varArrShiftPop.shift() :" + varArrShiftPop.shift())  //B
+        // console.log("varArrShiftPop :" + varArrShiftPop)  //D,F,I
+
+        // console.log("varArrShiftPop.pop :" + varArrShiftPop.pop)
+        // console.log("varArrShiftPop :" + varArrShiftPop) // D,F,I
+
+        // var arrSub = ["국어", "영어", "수학"];
+
+        // function getAvg(arrSubs) {
+        //     var sum = 0;
+
+        //     for (var i in arrSubs) {
+        //         sum = sum + Number(arrSubs[i]);
+        //     }
+        //     return sum / arrSubs.length;
+        // }
+
+        // function getGrade(avg) {
+        //     var grade = "가";
+
+        //     if (avg >= 90) {
+        //         grade = "수";
+        //     } else if (avg >= 80) {
+        //         grade = "우";
+        //     } else if (avg >= 70) {
+        //         grade = "미";
+        //     } else if (avg >= 60) {
+        //         grade = "양";
+        //     }
+        //     else {
+        //         grade = "가";
+
+        //         return grade;
+        //     }
+
+        //     for (var i in arrSub) {
+        //         arrSub[i] = prompt(arrSub[i])
+        //     }
+        // }
+
+        // document.write("평균" + getAvg(arrSub) + "<br>");
+        // document.write("학점" + getGrade(getAvg(arrSub)) + "<br>");
+
+
+        // function funName(funCBF, funCBP, num) {
+
+        //     for (var i = 1; i <= 10; i++) {
+        //         console.log(num + "*" + i + "=" + (num * i))
+        //         if (i < 10) funCBP(i)
+        //     }
+        //     funCBF()
+        // }
+        // function funCallBackProgress(n) {
+        //     console.log((n * 10) + "% 진행 완료!")
+        // }
+        // function funCallBackFinish() {
+        //     console.log("서버 작업 종료!")
+        // }
+        // funName(funCallBackFinish, funCallBackProgress, 7)
     </script>
 
 </head>
