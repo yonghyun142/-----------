@@ -6,20 +6,278 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        window.onload = function(){
 
-            var str = ""
 
-            for(var i=1; i<=5; i++){
-                str = str +"안녕하세요"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//빨간 줄 삽입 + 사진 삽입 + 글 삽입
+
+        // window.onload = function(){
+        
+        
+        //             var str = "";
+        //             str += "<p id='jsTitle'> javascript & node.js </p>";
+        //             str += "<img id='logoImg', src='img/logo.png'>";
+
+
+        //             document.body.innerHTML = str;
+
+
+        //             var titleNode = document.getElementById("jsTitle");
+        //             titleNode.style.fontSize = "1.2em";
+        //             titleNode.style.border = "1px solid #ff0000";
+
+        //             var logoNode = document.getElementById("logoImg");
+        //             logoNode.style.width = "170px";
+        //             logoNode.style.height = "67px";
+
+        // }
+
+
+
+//현재 시간 출력
+
+        // window.onload = function(){
+
+        //     function setClock(){
+        //         var date = new Date()
+
+        //         var hour = date.getHours()
+        //         var min = date.getMinutes()
+        //         var sec = date.getSeconds()
+
+        //         document.body.innerHTML = hour + ":" + min + ":" + sec
+        //     }
+        //     setInterval(setClock,1000)
+        // }
+
+
+
+
+//이미지 + 글자 ex)
+
+        // window.onload = function(){
+
+        //     var str = ""
+        //     str += "<p> javascript & node.js <p>"
+        //     str += "<img src='###'"
+        //     str +="width='170', height='67',tempData='logoImg'>"
+            
+        //     document.body.innerHTML = str
+        // }
+
+
+
+
+// innerHTML속성 이용하기
+
+        // window.onload = function(){
+
+        //     var str = ""
+
+        //     for(var i=1; i<=5; i++){
+        //         str = str +"안녕하세요"
+        //     }
+        //     document.body.innerHTML = str;
+        // }
+
+
+
+        
+
+            // ce.ondbclick = function(){
+            //      document.write('꽝');
+            //     ce.style.backgroundColor = "blue";
+            // }
+
+
+            // ce.onclick = function(){
+            //     ce.style.backgroundColor = "blue"
+            // }
+
+//한번 클릭하면 파랑, 두번 클릭하면 빨강이 뜨는 이벤트클릭 창 생성
+
+    //         window.onload = function(){
+    //         var ce = document.getElementById("cEvent")
+
+    //         var changeBlue = function(){
+    //             ce.style.backgroundColor = "blue"
+    //         }
+    //         ce.addEventListener("click",changeBlue)
+
+    //         ce.ondblclick = function(){
+    //             ce.style.backgroundColor = "red"
+    //         }
+    //     }
+    //  </script>
+
+
+    <!-- //       <style>
+    //         #cEvent 
+    //         {
+    //            width: 200px; height: 100px;
+    //            line-height: 100px;
+    //            text-align: center;
+    //            font-size: 1.2em;
+    //            background-color: #f00;
+    //            color: #fff;
+    //            font-weight: bolder;
+    //         }
+         </style> -->
+            
+
+<!-- //한번 클릭하면 파랑, 두번 클릭하면 빨강이 뜨는 이벤트클릭 창 생성222 -->
+         <!-- <script>
+            window.onload = function(){
+            var ce = document.getElementById("cEvent")
+            var divCe = document.getElementById("divEvent")
+
+            var changeBlue = function(event){
+                console.log(event)
+                this.style.backgroundColor = "blue"
             }
-            document.body.innerHTML = str;
+
+            var changeRed = function(event){
+                console.log(event)
+                this.style.backgroundColor = "red"
+            }
+
+            ce.addEventListener("click",changeBlue)
+            ce.addEventListener("dblclick",changeRed)
+
+            divCe.addEventListener("click",changeBlue)
+            divCe.addEventListener("dblclick",changeRed)
+            
+
+            
+
+          
         }
-    </script>
-</head>
+     </script>
+
+
+          <style>
+            #cEvent 
+            {
+               width: 200px; height: 100px;
+               line-height: 100px;
+               text-align: center;
+               font-size: 1.2em;
+               background-color: #f00;
+               color: #fff;
+               font-weight: bolder;
+            }
+            #divEvent
+            {
+               width: 200px; height: 100px;
+               line-height: 100px;
+               text-align: center;
+               font-size: 1.2em;
+               background-color: #14ff53;
+               color: #fff;
+               font-weight: bolder;
+            }
+         </style> -->
+               
+         <script>
+        //     window.onload = function(){
+        //        var me = document.getElementById("mouseEvent");
+        //        me.addEventListener("click", function(){
+        //           console.log("click event!!");
+        //        }, false);
+               
+        //        me.addEventListener("mouseover", function(){
+        //           console.log("mouseover event!!");
+        //        }, false);
+               
+        //        me.addEventListener("mouseout", function(){
+        //           console.log("mouseout event!!");
+        //        }, false);
+               
+        //        me.addEventListener("mousemove", function(e){
+        //           console.log("mousemove event!!");
+        //           //console.log("x : " + e.clientX + ", y : " + e.clientX);
+        //        }, false);
+               
+        //        me.addEventListener("mousedown", function(e){
+        //           console.log("mousedown event!!");
+        //        }, false);
+               
+        //        me.addEventListener("mouseup", function(e){
+        //           console.log("mouseup event!!");
+        //        }, false);
+               
+        //        me.addEventListener("dblclick", function(e){
+        //           console.log("dblclick event!!");
+        //        }, false);
+        //     }
+        //  </script>
+         
+        <!-- //  <style>
+        //     #mouseEvent {
+        //        width: 200px; height: 100px;
+        //        line-height: 100px;
+        //        text-align: center;
+        //        font-size: 1.2em;
+        //        background-color: #f00;
+        //        color: #fff;
+        //        font-weight: bolder;
+        //     </style> -->
+        <!-- <script>
+            function test() {
+                console.log(event.keyCode);
+                document.getElementById('result').innerText = event.keyCode;
+            }
+        </script> -->
+
+
+<!-- 입력창 생성 후 문자or숫자 등 입력시 아스키코드charCodeAt() 출력 -->
+
+        <!-- <script>
+            window.onload = function(){
+
+                function inputHandler(event){
+                    console.log(event.key)
+                    console.log(event.keyCode)
+
+                    document.getElementById('result').innerText = event.key.charCodeAt()
+                }
+                
+                var input = document.getElementById("input_char")
+                input.addEventListener("keydown",inputHandler)
+            }
+        </script> -->
+
+
+
+    </head>
 <body>
-    
+
+
+
+
+    <!-- <input id="input_char" type=""text>
+    <span id="result"></span> -->
+    <!-- <input type="text" onkeyup="test()">
+    <span id="result"></span> -->
+    <!-- <div id="mouseEvent">mouse event</div> -->
+
+    /* <!-- <div id = "cEvent">이벤트 클릭</div>
+    <div id="divEvent">DIV 클릭</div> --> */
 </body>
 </html>
 
-newdate
