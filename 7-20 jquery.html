@@ -118,7 +118,7 @@
 
 
 <!-- each()문 -->
-                <script>
+                <!-- <script>
                 $(document).ready(function(){
                 
                   $("P").each(function(index, item){
@@ -129,20 +129,54 @@
 
                   
                   console.log($("#htmlMethod").html())
-
                   $("#htmlMethod").html("<strong>new</strong>")
 
+                  console.log("=====================")
                   console.log($("#htmlMethod").html())
+                  console.log($("#textMethod").text())
+
+                  console.log("=====================")
+                  console.log($("#htmlMethod").text("아아아아"))
+                  console.log($("#textMethod").text())
+                
+
+                
+                })
+               
+                </script> -->
+
+
+<!-- val()함수 -->
+                <!-- <script>
+                $(document).ready(function(){
+                
+ 
+                   var num = $("#input").val()
+
+                   console.log(num)
+
+                   $("#input").val('hello world')
+               
+                 })
+                </script> -->
+
+                <script>
+                $(document).ready(function(){
+
+                    $("#removeMethod").remove() //문서 객체 제거
+                    $("#emptyMethod").empty() //문서 객체 내부 제거
+
+                    $("#attrMethod img").attr("src","./study/img/logo.png")
+                    console.log($("#attrMethod img").attr("src"))
+
+                    $("#attrMethod img").removeAttr("src")
                 })
                 </script>
-
-
-
         </head>
         <body>
-
+<!-- <input id = "input" type="text" value="1"> -->
  <!-- each()문 -->
-                    <p> Hello javascript! </p>
+                     <p> Hello javascript! </p>
                     <p> Hello jQuery! </p>
                     <p> Hello node.js! </p>
                     
