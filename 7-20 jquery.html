@@ -203,7 +203,27 @@
          </script> -->
 
 
-
+         <h1>16.리스트 추가</h1>
+         <script>
+             $(document).ready( function() {
+                
+                 $("#add").click(function(){
+                     let text = $("#words").val();      
+                    
+                     if(text =="")
+                         return;
+  
+ 
+                     let list = $("<li></li>");
+                     list.text(text);
+  
+ 
+                     $("#uList").append(list);
+                 });
+             });
+  
+ 
+         </script>
 
         </head>
         <body>
