@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        // $(document).ready(function name(){
+        //     jQuery("p").css("color","red")
+        //     var myJQ =jQuery("p")
+        //        myJQ.css("textDecoration","underLine")
+
+        //       $("p").css("fontSize","2em").css("height","300px")
+
+        // })
+//jQuery 사용법
+    //     window.onload = function(){
+    //     jQuery("p").css("color","red")
+    //     $("p").css("fontWeight","bolder")
+    //     var myJQ =jQuery("p")
+    //     myJQ.css("textDecoration","underLine")
+
+    //     $("p").css("fontSize","2em").css("height","300px")
+    // }
+    </script>
+    <script>
+             // $(document).ready(function(){
+                 // $("*").css("fontSize","1.1em")
+                 // $("li").css("color","#0000ff")
+                 // $("#item").css("background","#ffff00").css("width","300px")
+                 // $(".seoul").css("background","#ff0000")
+                 // $("#wrap p").css("border","2PX SOLID #cccccc")
+             // })
+//객체생성
+            //$(document).ready(function(){
+            //var wrapObj = $("#wrap")
+            
+            //var divObj = $("<div> 안녕하세요!!</div>")
+            //divObj.appendTo(wrapObj)
+            //divObj.css("background","#ff0000")
+            
+//<a>객체 생성 및 추가(appendTo() )
+            //var aObj = $("<a href='http://www.google.com' target='_blank'> google </a><br>")
+            //aObj.appendTo(wrapObj)
+
+            //var imgObj = $("<img src ='img/logo.png' /><br>")
+            //imgObj.appendTo(wrapObj)
+            //})
+        // $(document).ready(function(){
+
+        //     var wrapObj = $("#wrap")
+
+        //     var divObj = $("<div> 안녕하세요!!</div>")
+
+            // divObj.appendTo(wrapObj) // appendTo(부모)
+            // wrapObj.append(divObj)
+            // divObj.prependTo(wrapObj) //제일 처음 위치에 집어넣음
+            // wrapObj.prepend(divObj)
+
+            // divObj.insertAfter(wrapObj)
+            // wrapObj.after(divObj)
+
+            // divObj.insertBefore(wrapObj)
+        // })
+
+// appendTo() 반대= append() 
+            // 해당 div내용 바깥쪽에 집어넣음  
+            // 사용방법
+            // 자식.appendTo(부모)
+            // 부모.append(자식)
+// prependTo()  반대=prepend()
+            // 제일 처음 위치에 집어넣음
+            // 사용방법
+            // 자식.prependTo(부모)
+            // 부모.prepend(자식)
+
+
+// insertAfter() 반대=after()
+            // 마지막 위치에 집어넣음
+            // 사용방법
+            // 자식.insertAfter(부모)
+            // 부모.after(자식)
+
+
+// insertBefore() 반대=before
+            // 해당 div내용 위에 집어넣음
+            // 사용방법
+            // 자식.insertBefore(부모)
+            // 부모.before(자식)
+      
+    </script>
+
+
+
+<!-- appendTo 사용 방식
+             <style>
+                #wrap .contents1 .p {
+                   background: #ff0000;
+                }
+                
+                #wrap .contents2 .p {
+                   background: #ffff00;
+                }
+                
+             </style>
+             <script src ="http://www.google.com">
+            
+             </script>
+            <script>
+                $(document).ready(function () {
+                       // $("#wrap.contents .p").appendTo($("#wrap > .contnets2"))
+                       var clone = $("#wrap.contents1 .p").clone()
+                       clone.appendTo$( $("#wrap >.contents1"))
+                      })
+                  </script> -->
+
+
+<!-- each()문 -->
+                <script>
+                $(document).ready(function(){
+                
+                  $("P").each(function(index, item){
+                      console.log(index + $(item).text())
+                      console.log(index + $(this).text())
+                      console.log(this)  //item은 this랑 같음
+                  })
+
+                  
+                  console.log($("#htmlMethod").html())
+
+                  $("#htmlMethod").html("<strong>new</strong>")
+
+                  console.log($("#htmlMethod").html())
+                })
+                </script>
+
+
+
+        </head>
+        <body>
+
+ <!-- each()문 -->
+                    <p> Hello javascript! </p>
+                    <p> Hello jQuery! </p>
+                    <p> Hello node.js! </p>
+                    
+                    <div id="htmlMethod"> html() 메서드 </div>
+                    <div id="textMethod"> text() 메서드 </div>
+                    
+                    <div id="addClass"> addClass() 메서드 </div>
+                    <div id="removeClass" class="remCla"> removeClass() 메서드 </div>
+                    
+                    <div id="attrMethod">
+                       <img>
+                       <br>
+                       <img>
+                    </div>
+                    
+                    <div id="cssMethod"> CSS METHOD </div>
+                    
+                    <div id="removeMthod"> Remove Object! </div>
+                    <div id="emptyMthod"> Empty Object! </div>
+
+
+
+<!-- appendTo 사용 방식 -->
+                  <!-- <div id="wrap">
+                      <div class ="contents1">
+                          <p class = "p">contents1</p>
+
+                      </div>
+              <div>contents</div>
+
+          </div>
+          <div id="wrap">
+              <div class="contents1">
+                  <p class="p">contents1</p>
+              </div>
+
+              <div class="contents2">
+                  <p class="p">contents2</p>
+              </div>
+          </div> -->
+      
+ 
+<!-- jQuery 사용법
+             <div id ="wrap"></div>
+             <div id="wrap">
+                 <p>jQuery selector</p>
+                 <div id="centent">
+                    <h1>centent</h1>
+                    <p>ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅌ</p>
+                    <p>ABCDEFGHIJKLMN</p>
+                 </div>
+                 <div id="item">
+                    <ul>
+                       <li class="seoul">서울</li>
+                       <li class="gyeonggi_do">경기도</li>
+                       <li>충청도</li>
+                       <li>전라도</li>
+                       <li>경상도</li>
+                       <li>강원도</li>
+                       <li>제주도</li>
+                    </ul>
+                 </div>
+              </div> -->
+
+
+
+
+
+</body>
+</html>
