@@ -65,20 +65,120 @@
         // });
 
 
-        // </script>
-        // <script>
-        // $(document).on("click",".del-button",function(){
-        // console.log(this);
-        // $(this).parent().parent().remove();
-        // });
-        // </script>
+            // </script>
+            // <script>
+            // $(document).on("click",".del-button",function(){
+            // console.log(this);
+            // $(this).parent().parent().remove();
+            // });
+            // </script>
+             <!-- 
+             <script>
+                 $(document).ready(function () {
+                     $("#btnTotal").click(function () {
+                             var total =0
+
+                             $("input:checkbox:checked").each(function(index,item){
+                                 total = total + Number($(item).val())
+
+                             })
+                             $("#totalPrice").text(total)
+                         
+                         });
+                     });
+                </script> -->
+
+
+<!-- 리스트 삭제 기능 추가 -->
+                <!-- <script>
+                $(document).ready(function(){
+                    $("#add").click(function(){
+                        var text = $("#words").val()
+                    
+                        if(text == "")
+                        return
+
+                        var list = $("<li class='plant'></li>")
+                        list.text(text + "x")
+
+                        $("#uList").append(list)
+
+                    })
+                
+                $(document).on('click', '.plant', function(){
+                    $(this).remove()    
+
+                    })
+                })
+
+                </script> -->
+                <!-- <script>
+                $.ajax({
+                    type : "GET",
+                    url : "http://sample.bmaster.kro.kr/contacts?pageno=3&pagesize=10",
+                    success: function (result) {
+                    
+                     console.log(result);
+                    
+                     $("#list-table").append(
+                         $("<tr></tr>")
+                          .append($("<td></td>").text("번호"))
+                             .append($("<td></td>").text("이름"))
+                             .append($("<td></td>").text("제목"))
+                             .append($("<td></td>").text("날짜"))
+                             .append($("<td></td>").text("히트"))
+                             .append($("<td></td>").text("삭제"))     
+                     );
+                
+                     $(result.contacts).each(function(){
+                     $("#list-table").append(
+                         $("<tr></tr>")
+                             .append($("<td></td>").text(this.no))
+                             .append($("<td></td>").text(this.name))
+                             .append($("<td></td>").text(this.tel))
+                             .append($("<td></td>").text(this.address))
+                             .append($("<td></td>").append($("2022--12-13102.09.41.000.00:00").attr("src",this.photo)))
+                             .append($("<td></td>").append($("<input></input>").attr("id",this.no).attr("type","button").attr("class","del-button").attr("value","삭제")  ))     
+                     );
+                     });
+                
+                    },
+                    error: function (e) {
+                        console.log(e);
+                    }
+                });
+                
+                
+                </script>
+                <script>
+                $(document).on("click",".del-button",function(){
+                console.log(this);
+                $(this).parent().parent().remove();
+                });
+                </script> -->
+                
 
 
 </head>
+
 <body>
+        <!-- <table id="list-table" width="500" border="1"></table> -->
+
+<!-- 리스트 삭제 기능 추가             -->
+            <!-- <input type="text" id="words">
+            <button type="button" id="add" >추가</button><br>
+            <ul id="uList"></ul>
+            <br> -->
 
 
-    
+
+          <!-- <div>
+              바나나(1000원) <input type="checkbox" name="fruit" class="fruit" value="1000"><br>
+              사과(500원) <input type="checkbox" name="fruit" class="fruit" value="500"><br>
+              배(1500원) <input type="checkbox" name="fruit" class="fruit" value="1500"><br>
+              <button id="btnTotal">총합구하기</button><br>
+              선택한 총가격:<span id="totalPrice"></span>
+          </div> -->
 <!-- 아래의 주소로 ajax 통신하여, 아래와 같이 동적으로 table을 생성하기. -->
       <!-- <table id="list-table" width="500" border="1"></table> -->
     
