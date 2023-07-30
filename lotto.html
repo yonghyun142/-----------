@@ -12,14 +12,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
   <style>
-    /* 커스텀 CSS를 사용하여 navbar의 양옆에 패딩 제거 */
-
-   
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
     h1 {
-      color: #2b248a;
+      color: #000000;
+
       font-family: Georgia, serif;
-      font-size: 46px;
+      font-size: 50px;
+      text-shadow: 2px 2px 15px #f7ff01;
     }
 
     .numbers {
@@ -33,8 +39,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 65px;
-      height: 65px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       background-color: #00ff00;
       color: #000000;
@@ -92,7 +98,7 @@
 
 </head>
 
-<body class="d-flex vw-100 vh-100 text-center flex-column justify-content-between" >
+<body class="d-flex vw-100 vh-100 text-center flex-column justify-content-between">
   <header>
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
       <div class="container-fluid">
@@ -109,13 +115,7 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="./rsp.html">가위바위보</a>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Joblist</a>
-            </li>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">게시판</a>
-            </li> -->
+
           </ul>
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -144,7 +144,7 @@
         });
       }
 
-      generateLottoNumbers(); // Generate initial numbers on page load
+      generateLottoNumbers(); 
     </script>
   </header>
   <main>
@@ -163,7 +163,7 @@
     </div>
 
   </main>
-  <footer></footer>
+
 </body>
 
 </html>
