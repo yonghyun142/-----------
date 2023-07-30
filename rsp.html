@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,59 +12,75 @@
 
     <style>
         #computer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 213px; /* 142px * 1.5 */
-        height: 300px; /* 200px * 1.5 */
-        margin: 0 auto; /* To center the image horizontally */
-    }
-    #computer img {
-        width: 100%;
-        height: 100%;
-    }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 213px;
+            /* 142px * 1.5 */
+            height: 300px;
+            /* 200px * 1.5 */
+            margin: 0 auto;
+            /* To center the image horizontally */
+        }
+
+        #computer img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
     </style>
 </head>
 
 
 <body class="d-flex vw-100 vh-100 text-center flex-column justify-content-between">
     <header>
-    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="./lotto_rsp-project.html">게임사이트</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./lotto.html">로또</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./rsp.html">가위바위보</a>
-          </li>
-        <li class="nav-item">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./lotto_rsp-project.html">게임사이트</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./lotto.html">로또</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./rsp.html">가위바위보</a>
+                        </li>
+                        <!-- <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Joblist</a>
-          </li>
-          <!-- <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+          </li> -->
+                        <!-- <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
             <li><a class="dropdown-item" href="#">게시판</a></li>
             <li><a class="dropdown-item" href="#">게시판</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul> -->
-        </li>
+                        <!-- </li>
         <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">게시판</a>
-          </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-</header>
+          </li> -->
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
 
 
 
@@ -76,81 +93,88 @@
             width: 142px;
             height: 200px;
         }
-    </style>
-</head>
-<body>
-    <div id="computer"></div>
-    <div>
-        <button id="scissors" class="btn">가위</button>
-        <button id="rock" class="btn">바위</button>
-        <button id="paper" class="btn">보</button>
-    </div>
-    <div id="score">0점</div>
-   
-    <script>
-        const $computer = document.querySelector('#computer');
-        const $score = document.querySelector('#score');
-        const $rock = document.querySelector('#rock');
-        const $scissors = document.querySelector('#scissors');
-        const $paper = document.querySelector('#paper');
-       
-        let score = 0;
-       
-        const rspX = {
-            scissors: './image/scissors.jpg',
-            rock: './image/rock.jpg',
-            paper: './image/paper.jpg',
-        };
-       
-        const computerChoices = Object.keys(rspX);
-        let computerChoice = 'scissors';
-       
-        const changeComputerHand = () => {
-            const randomIndex = Math.floor(Math.random() * computerChoices.length);
-            computerChoice = computerChoices[randomIndex];
-            $computer.innerHTML = `<img src="${rspX[computerChoice]}" alt="${computerChoice}" width="142" height="200">`;
-        }
-       
-        let intervalId = setInterval(changeComputerHand, 50);
-       
-        const scoreTable = {
-            rock: 0,
-            scissors: 1,
-            paper: -1
-        };
-       
-        let clickable = true;
-        const clickButton = () => {
-            if (clickable) {
-                clearInterval(intervalId); //삭제하고 다시 실행
-                clickable = false; // 연타방지
-                const myChoice = event.target.id === 'rock' ? 'rock' :
-                event.target.textContent === '가위' ? 'scissors' : 'paper';
-               
-                let message;
-                const myScore = scoreTable[myChoice];
-                const computerScore = scoreTable[computerChoice];
-                const diff = myScore - computerScore;
-                if (diff === 2 || diff === -1) {
-                    score += 1;
-                    message = '승리';
-                } else if ([-2, 1].includes(diff)) {
-                    score -= 1;
-                    message = '패배';
-                } else {
-                    message = '무승부';
-                }
-                $score.textContent = `${message} / 현재 ${score}점`;
-                setTimeout(() => {
-                    clickable = true;
-                    intervalId = setInterval(changeComputerHand, 50);
-                }, 1000);
-            }
-        };
-        $rock.addEventListener('click', clickButton);
-        $paper.addEventListener('click', clickButton);
-        $scissors.addEventListener('click', clickButton);
-    </script>
 
-</body>
+
+    </style>
+    </head>
+
+    <body>
+        <div id="computer"></div>
+        <div>
+            <button id="scissors" class="btn">가위</button>
+            <button id="rock" class="btn">바위</button>
+            <button id="paper" class="btn">보</button>
+        </div>
+        <div id="score">0점</div>
+        <div id="result">
+            <script>
+
+                const $computer = document.querySelector('#computer');
+                const $score = document.querySelector('#score');
+                const $rock = document.querySelector('#rock');
+                const $scissors = document.querySelector('#scissors');
+                const $paper = document.querySelector('#paper');
+
+                let score = 0;
+
+                const rspX = {
+                    scissors: './image/scissors.jpg',
+                    rock: './image/rock.jpg',
+                    paper: './image/paper.jpg',
+                };
+
+                const computerChoices = Object.keys(rspX);
+                let computerChoice = 'scissors';
+
+                const changeComputerHand = () => {
+                    const randomIndex = Math.floor(Math.random() * computerChoices.length);
+                    computerChoice = computerChoices[randomIndex];
+                    $computer.innerHTML = `<img src="${rspX[computerChoice]}" alt="${computerChoice}" width="142" height="200">`;
+                }
+
+                let intervalId = setInterval(changeComputerHand, 50);
+
+                const scoreTable = {
+                    rock: 0,
+                    scissors: 1,
+                    paper: -1
+                };
+
+                let clickable = true;
+                const clickButton = () => {
+                    if (clickable) {
+                        clearInterval(intervalId); //삭제하고 다시 실행
+                        clickable = false; // 연타방지
+                        const myChoice = event.target.id === 'rock' ? 'rock' :
+                            event.target.textContent === '가위' ? 'scissors' : 'paper';
+
+                        let message;
+                        const myScore = scoreTable[myChoice];
+                        const computerScore = scoreTable[computerChoice];
+                        const diff = myScore - computerScore;
+                        if (diff === 2 || diff === -1) {
+                            score += 1;
+                            message = '승리';
+                        } else if ([-2, 1].includes(diff)) {
+                            score -= 1;
+                            message = '패배';
+                        } else {
+                            message = '무승부';
+                        }
+
+                        $score.textContent = `${message} / 현재 ${score}점`;
+                        setTimeout(() => {
+                            clickable = true;
+                            intervalId = setInterval(changeComputerHand, 50);
+                        }, 1000);
+                    }
+                };
+                $rock.addEventListener('click', clickButton);
+                $paper.addEventListener('click', clickButton);
+                $scissors.addEventListener('click', clickButton);
+
+            </script>
+        </div>
+    </body>
+
 </html>

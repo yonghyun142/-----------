@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lotto Generator</title>
-  
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -14,10 +14,12 @@
   <style>
     /* 커스텀 CSS를 사용하여 navbar의 양옆에 패딩 제거 */
 
-
+   
 
     h1 {
-      color: #4caf50;
+      color: #2b248a;
+      font-family: Georgia, serif;
+      font-size: 46px;
     }
 
     .numbers {
@@ -31,14 +33,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 40px;
-      height: 40px;
+      width: 65px;
+      height: 65px;
       border-radius: 50%;
-      background-color: #4caf50;
-      color: #fff;
+      background-color: #00ff00;
+      color: #000000;
       font-size: 20px;
       margin: 0 5px;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+      animation: moveBg 12s infinite;
     }
 
     .generate-btn {
@@ -53,14 +56,45 @@
     }
 
     .generate-btn:hover {
-      background-color: #45a049;
+      background-color: #4ae254;
+    }
+
+    .moving-bg {
+      background-color: #00ff00;
+    }
+
+    @keyframes moveBg {
+      0% {
+        background-color: #fff2f2;
+      }
+
+      20% {
+        background-color: #fffed2;
+      }
+
+      40% {
+        background-color: #dbffde;
+      }
+
+      60% {
+        background-color: #d9fff8;
+      }
+
+      80% {
+        background-color: #d5eaff;
+      }
+
+      100% {
+        background-color: #f5eaff;
+      }
     }
   </style>
+
 </head>
 
-<body class="d-flex vw-100 vh-100 text-center flex-column justify-content-between">
+<body class="d-flex vw-100 vh-100 text-center flex-column justify-content-between" >
   <header>
-  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="./lotto_rsp-project.html">게임사이트</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
@@ -68,26 +102,20 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll ms-auto" style="--bs-scroll-height: 100px;">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="./lotto.html">로또</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="./rsp.html">가위바위보</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Joblist</a>
             </li>
-            <!-- <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-            <li><a class="dropdown-item" href="#">게시판</a></li>
-            <li><a class="dropdown-item" href="#">게시판</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul> -->
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">게시판</a>
-            </li>
+            </li> -->
           </ul>
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -124,19 +152,18 @@
     <div class="container">
       <h1>Lotto Number Generator</h1>
       <div class="numbers" id="generatedNumbers">
-        <span class="number"></span>
-        <span class="number"></span>
-        <span class="number"></span>
-        <span class="number"></span>
-        <span class="number"></span>
-        <span class="number"></span>
+        <span class="number" id="result"></span>
+        <span class="number" id="result"></span>
+        <span class="number" id="result"></span>
+        <span class="number" id="result"></span>
+        <span class="number" id="result"></span>
+        <span class="number" id="result"></span>
       </div>
       <button class="generate-btn" onclick="generateLottoNumbers()">Generate Numbers</button>
     </div>
-    <script src="script.js"></script>
 
   </main>
-  <footer>꼬리말 들어가는 자리</footer>
+  <footer></footer>
 </body>
 
 </html>
