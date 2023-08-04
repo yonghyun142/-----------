@@ -5,6 +5,38 @@
     <title>메인페이지</title>
     <!-- 부트스트랩 CDN 링크 추가 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <style> /* 이미지에 마우스를 올렸을 때 손가락 커서가 나타나도록 스타일 지정 */
+    .clickable-image {
+      cursor: pointer;
+      
+    }
+    .clickable-image1{
+        top: 30px;
+        left: auto;
+        width: 220px;
+        height: 300px;
+    }
+    .clickable-image2{
+        top: auto;
+        left: auto;
+        width: 380px;
+        height: 300px;
+    }
+    .clickable-image3{
+        top: auto;
+        left: auto;
+        width: 220px;
+        height: 300px;
+    }
+    .clickable-image4{
+        
+        width: 380px;
+        height: 300px;
+    }
+    .img_box { margin: 100px auto 0; }
+ 
+ 
+</style>
 </head>
 
 <body>
@@ -25,7 +57,7 @@
                         <a class="nav-link" href="./team-vote.html">투표</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">홈쇼핑</a>
+                        <a class="nav-link" href="./team-homeshoping.html">홈쇼핑</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./team-golf.html">골프연습장 회원관리</a>
@@ -39,7 +71,27 @@
         </nav>
     </header>
     <main>
-        <!-- 각각의 정보를 출력할 공간 -->
+        <div class="img_box d-flex w-75 justify-content-between">
+            <a href="./team-game.mainpage.html">
+                <img src="./game.png" class="clickable-image1">
+            </a>
+              
+              <!-- 두 번째 이미지와 링크 -->
+            <a href="./team-vote.html">
+                <img src="./vote.png" class="clickable-image2">
+            </a>
+              
+              <!-- 세 번째 이미지와 링크 -->
+            <a href="./team-homeshoping.html">
+                <img src="./shopping.png" class="clickable-image3">
+            </a>
+              
+              <!-- 네 번째 이미지와 링크 -->
+            <a href="./team-golf.html">
+                <img src="./golf.png" class="clickable-image4">
+            </a>
+        </div>
+          
     </main>
     <footer class="mt-5 py-3 text-center">
         <p>HRDKOREA Copyright@ 2015 All rights reserved.
